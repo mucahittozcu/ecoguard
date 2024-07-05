@@ -23,7 +23,7 @@ const page = () => {
           <h1 className="text-4xl font-bold pl-2 text-gradient ">EcoGuard</h1>
         </div>
        <div className="bg-[#434343] w-[400px] h-[800px] xl:w-[650px] xl:h-[800px] lg:w-[550px] lg:h-[800px] md:w-[500px] md:h-[800px] xl:bg-opacity-80 lg:bg-opacity-80 md:bg-opacity-80 bg-opacity-80 rounded-2xl flex-flex-col xl:p-28 xl:pt-16 lg:p-20 lg:pt-16 md:p-20 md:pt-16 p-14 pt-14">
-         <h2 className="text-white text-7xl font-bold ">Sign In</h2>
+         <h2 className="text-white text-7xl font-bold ">Sign Up</h2>
          <form onSubmit={handleSubmit} className="flex-flex-col">
         <div className="relative mt-10">
          <FaUser className="absolute top-[50%] left-[2%] transform -translate-y-1/2 text-gray-50 " size={20} />
@@ -86,7 +86,7 @@ const page = () => {
          <label className="pl-2 text-white font-light " htmlFor="agree">I agree <a href="#" className="font-bold">Terms and Conditions & Private Policy </a> by Signing in</label>
          </form>
          <div className=" flex flex-col justify-center items-center pt-14">
-         <Link href="/" >
+         <Link href="/dashboard" >
             <button className="w-[250px] h-[60px] xl:w-[350px] xl:h-[60px] lg:w-[300px] lg:h-[60px] md:w-[270px] md:h-[60px] mb-10 text-[#0068C8] bg-white text-2xl font-bold rounded-xl border border-white ">Sign Up</button>
          </Link>
          </div>

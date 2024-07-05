@@ -1,5 +1,5 @@
 "use client"
-import Link from "next/link"
+
 import { useState,useEffect } from "react"
 import { CiSearch } from "react-icons/ci";
 import { FaToggleOff,FaToggleOn } from "react-icons/fa6";
@@ -11,19 +11,36 @@ import { LuWaves } from "react-icons/lu";
 import { MdOutlineBedroomParent } from "react-icons/md";
 import { MdOutlineLiving } from "react-icons/md";
 import Hamburger from "@/components/Hamburger";
+import LineChart, { BarChartWqi } from "@/components/Charts";
+import { LineChart2 } from "@/components/Charts";
+import { DonutChart } from "@/components/Charts";
+import { BarChart } from "@/components/Charts";
+
 
 const page = () => {
   const [search,setSearch] = useState("")
   const [isToggled, setIsToggled] = useState(false)
   const [showDetails, setShowDetails] = useState(false)
-  const [showDetails2, setShowDetails2] = useState(false)
+  const [showDetails2, setShowDetails2] = useState(true)
   const [wqi,setWqi] = useState([])
+  const [aqi,setAqi] = useState([])
+  const [voc,setVoc] = useState([])
+
   useEffect(() => {
    setWqi([
-     { name: 'Humidity', value: Math.floor(Math.random() * 100) + 1 },
+     { name: 'Temperature', value: Math.floor(Math.random() * 100) + 1, smg: "℃" },
      { name: 'PH Value', value: Math.floor(Math.random() * 10) + 1 },
      { name: 'TDS Level', value: Math.floor(Math.random() * 200) + 1 },
    ])
+   setAqi([
+      { name: 'Temperature', value: Math.floor(Math.random() * 100) + 1, smg: "℃" },
+      { name: 'Humidity', value: Math.floor(Math.random() * 100) + 1, smg: "%" },
+    ])
+    setVoc([
+      { name: 'Benzene', value: Math.floor(Math.random() * 100) + 1 },
+      { name: 'Toluene', value: Math.floor(Math.random() * 100) + 1 },
+      { name: 'Gas 3', value: Math.floor(Math.random() * 100) + 1 },
+    ])
  },[])
 
     return (
@@ -64,8 +81,8 @@ const page = () => {
          </div>  
       </div>
        
-      <h2 className={`ml-0 xl:ml-28 lg:ml-5 md:ml-0 text-2xl font-semibold ${isToggled ? "text-white" : "text-black"}`}>Rooms</h2>
-      <div className="flex flex-col gap-y-2  md:flex md:flex-row gap-x-7 ml-0 xl:gap-x-7 xl:ml-28 md:ml-0 lg:gap-x-7  lg:ml-5">
+      <h2 className={`ml-0 xl:ml-28 lg:ml-0 md:ml-0 text-2xl font-semibold ${isToggled ? "text-white" : "text-black"}`}>Rooms</h2>
+      <div className="flex flex-col gap-y-2  md:flex md:flex-row gap-x-7 ml-0 xl:gap-x-7 xl:ml-28 md:ml-0 lg:gap-x-7  lg:ml-0">
          <div className="relative w-[350px] h-[73px] xl:w-[250px] xl:h-[70px] lg:w-[210px] lg:h-[70px] md:w-[210px] md:h-[70px] rounded-2xl bg-white ">
             <MdOutlineBedroomParent size={40} color="5997c9" className="absolute bg-[#cbe7fd] w-[60px] h-[55px] xl:w-[60px] xl:h-[55px] lg:w-[50px] lg:h-[50px] md:w-[50px] md:h-[50px] rounded-xl top-[10%] left-[5%] " />
            <div className="flex flex-col gap-y-1 pt-1 pl-28 xl:pl-28 lg:pl-20 md:pl-20 ">
@@ -89,19 +106,41 @@ const page = () => {
          </div>
       </div>
 
-        <h2 className={`ml-0 xl:ml-28 lg:ml-5 md:ml-0 text-2xl pt-10 font-semibold ${isToggled ? "text-white" : "text-black"}`}>Levels</h2>
-      <div className="ml-0 xl:ml-28 lg:ml-5 md:ml-0 rounded-2xl relative flex justify-between bg-white w-[450px] h-[60px] xl:w-[1300px] xl:h-[60px] lg:w-[700px] lg:h-[60px] md:w-[700px] md:h-[60px] ">
+        <h2 className={`ml-0 xl:ml-28 lg:ml-0 md:ml-0 text-2xl pt-10 font-semibold ${isToggled ? "text-white" : "text-black"}`}>Levels</h2>
+      <div className="ml-0 xl:ml-28 lg:ml-0 md:ml-0 rounded-2xl relative flex justify-between bg-white w-[450px] h-[60px] xl:w-[1300px] xl:h-[60px] lg:w-[710px] lg:h-[60px] md:w-[700px] md:h-[60px] ">
            <PiWind size={40} className="absolute top-[15%] left-[1%] " />
            <h2 className="pt-4 pl-16 text-2xl font-bold">AQI</h2>
            {showDetails ? <MdKeyboardArrowDown size={50} color="blue" onClick={() => setShowDetails((pre) => !pre)} className="mt-2 mr-2 cursor-pointer" /> : <MdKeyboardArrowUp size={50} color="blue" onClick={() => setShowDetails((pre) => !pre)} className="mt-2 mr-2 cursor-pointer" /> }
       </div>
+     {showDetails && 
+        <div className="flex"> 
 
-      <div className="ml-0 xl:ml-28 lg:ml-5 md:ml-0 relative rounded-2xl flex justify-between bg-white w-[450px] h-[60px] xl:w-[1300px] xl:h-[60px] lg:w-[700px] lg:h-[60px] md:w-[700px] md:h-[60px] ">
+         <div className="flex-flex-col">
+            <div className="w-[200px] mb-5 h-[225px] xl:w-[550px] xl:mb-5 xl:h-[325px] lg:w-[300px] lg:mb-5 md:w-[300px] md:h-[275px]  md:mb-5 ml-0 xl:ml-28 lg:ml-0 md:ml-0 lg:h-[275px] bg-white rounded-xl ">
+               <LineChart />
+            </div>
+            <div className="w-[200px] h-[225px] xl:w-[550px] xl:mb-5 xl:h-[325px] lg:w-[300px] lg:mb-5 ml-0 md:w-[300px] md:h-[275px]  md:mb-5 xl:ml-28 lg:ml-0 md:ml-0 lg:h-[275px] bg-white rounded-xl ">
+               <LineChart2 />
+            </div>
+         </div>
+         
+          <div className="flex flex-col gap-y-5">
+              <BarChart aqi={aqi} />
+             <DonutChart voc={voc} />
+          </div>
+          
+          </div>
+      }
+
+      <div className="ml-0 xl:ml-28 lg:ml-0 md:ml-0 relative rounded-2xl flex justify-between bg-white w-[450px] h-[60px] xl:w-[1300px] xl:h-[60px] lg:w-[710px] lg:h-[60px] md:w-[700px] md:h-[60px] ">
            <LuWaves size={35} className="absolute top-[20%] left-[1%] " />
            <h2 className="pt-4 pl-16 text-2xl font-bold">WQI</h2>
            {showDetails2 ? <MdKeyboardArrowDown size={50} color="blue" onClick={() => setShowDetails2((pre) => !pre)} className="mt-2 mr-2 cursor-pointer" /> : <MdKeyboardArrowUp size={50} color="blue" onClick={() => setShowDetails2((pre) => !pre)} className="mt-2 mr-2 cursor-pointer" /> }
       </div>
 
+    {showDetails2 && 
+       <BarChartWqi wqi={wqi} />
+    } 
       </div>
 
    </div>
