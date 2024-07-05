@@ -21,7 +21,7 @@ const page = () => {
   const [search,setSearch] = useState("")
   const [isToggled, setIsToggled] = useState(false)
   const [showDetails, setShowDetails] = useState(false)
-  const [showDetails2, setShowDetails2] = useState(true)
+  const [showDetails2, setShowDetails2] = useState(false)
   const [wqi,setWqi] = useState([])
   const [aqi,setAqi] = useState([])
   const [voc,setVoc] = useState([])
