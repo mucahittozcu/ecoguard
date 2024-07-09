@@ -83,24 +83,24 @@ const page = () => {
        
       <h2 className={`ml-0 xl:ml-28 lg:ml-0 md:ml-0 text-2xl font-semibold ${isToggled ? "text-white" : "text-black"}`}>Rooms</h2>
       <div className="flex flex-col gap-y-2  md:flex md:flex-row gap-x-7 ml-0 xl:gap-x-7 xl:ml-28 md:ml-0 lg:gap-x-7  lg:ml-0">
-         <div className="relative w-[350px] h-[73px] xl:w-[250px] xl:h-[70px] lg:w-[210px] lg:h-[70px] md:w-[210px] md:h-[70px] rounded-2xl bg-white ">
+         <div className="relative w-[300px] h-[73px] xl:w-[300px] xl:h-[70px] lg:w-[210px] lg:h-[70px] md:w-[210px] md:h-[70px] rounded-2xl bg-white ">
             <MdOutlineBedroomParent size={40} color="5997c9" className="absolute bg-[#cbe7fd] w-[60px] h-[55px] xl:w-[60px] xl:h-[55px] lg:w-[50px] lg:h-[50px] md:w-[50px] md:h-[50px] rounded-xl top-[10%] left-[5%] " />
-           <div className="flex flex-col gap-y-1 pt-1 pl-28 xl:pl-28 lg:pl-20 md:pl-20 ">
-             <h4 className="text-3xl font-semibold md:text-2xl md:font-semibold">Bedroom</h4>
+           <div className="flex flex-col gap-y-1 pt-1 pl-32 xl:pl-28 lg:pl-20 md:pl-20 ">
+             <h4 className="text-xl font-semibold md:text-2xl md:font-semibold">Bedroom</h4>
              <div className="flex justify-center items-center border-[3px] border-green-500 w-[52px] h-[25px] rounded-lg ">Good</div>
            </div>
          </div>
-         <div className="relative  w-[350px] h-[73px] xl:w-[250px] xl:h-[70px] lg:w-[210px] lg:h-[70px] md:w-[210px] md:h-[70px] rounded-2xl bg-white ">
+         <div className="relative  w-[300px] h-[73px] xl:w-[300px] xl:h-[70px] lg:w-[210px] lg:h-[70px] md:w-[210px] md:h-[70px] rounded-2xl bg-white ">
             <MdOutlineBedroomParent size={40} color="0f436b" className="absolute bg-[#0f436b] w-[60px] h-[55px] xl:w-[60px] xl:h-[55px] lg:w-[50px] lg:h-[50px] md:w-[50px] md:h-[50px] rounded-xl top-[10%] left-[5%] " />
-           <div className="flex flex-col gap-y-1 pt-1 pl-28 xl:pl-28 lg:pl-20 md:pl-20 ">
-             <h4 className="text-3xl font-semibold md:text-2xl md:font-semibold">Backyard</h4>
+           <div className="flex flex-col gap-y-1 pt-1 pl-32 xl:pl-28 lg:pl-20 md:pl-20 ">
+             <h4 className="text-xl font-semibold md:text-2xl md:font-semibold">Backyard</h4>
              <div className="flex justify-center items-center border-[3px] border-orange-300 w-[70px] h-[26px] rounded-lg ">Avarage</div>
            </div>
          </div>
-         <div className="relative  w-[350px] h-[73px] xl:w-[250px] xl:h-[70px] lg:w-[220px] lg:h-[70px] md:w-[210px] md:h-[70px] rounded-2xl bg-white ">
+         <div className="relative  w-[300px] h-[73px] xl:w-[300px] xl:h-[70px] lg:w-[220px] lg:h-[70px] md:w-[210px] md:h-[70px] rounded-2xl bg-white ">
             <MdOutlineLiving size={40} color="5997c9" className="absolute bg-[#cbe7fd] w-[60px] h-[55px] xl:w-[60px] xl:h-[55px] lg:w-[50px] lg:h-[50px] md:w-[50px] md:h-[50px] rounded-xl top-[10%] left-[5%] " /> 
-           <div className="flex flex-col gap-y-1 pt-1 pl-28 xl:pl-24 lg:pl-16 md:pl-20 ">
-             <h4 className="text-3xl font-semibold md:text-xl lg:text-2xl md:font-semibold">Living Room</h4>
+           <div className="flex flex-col gap-y-1 pt-1 pl-32 xl:pl-28 lg:pl-16 md:pl-20 ">
+             <h4 className="text-xl font-semibold md:text-xl lg:text-2xl md:font-semibold">Living Room</h4>
              <div className="flex justify-center items-center border-[3px] border-green-500 w-[52px] h-[25px] rounded-lg ">Good</div>
            </div>
          </div>

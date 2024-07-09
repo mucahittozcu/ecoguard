@@ -29,13 +29,13 @@ const Hamburger = () => {
             <h4 className="font-bold text-xl pb-3">Menu</h4>
           <div className="relative">
             <GoHome size={30} color="6C7894" className="absolute left-[0%] top-[-5%] " />
-            <Link href="/dashboard" className="pl-10 text-xl font-semibold">
+            <Link href="/dashboard" className="pl-10 text-xl font-semibold hover:text-blue-400">
                Dashboard
             </Link>
           </div>
           <div className="relative ">
             <MdOutlineMessage size={30} color="6C7894" className="absolute left-[0%] top-[5%] " />
-            <Link href="/messages" className="pl-10 text-xl font-semibold">
+            <Link href="/messages" className={`pl-10 text-xl font-semibold hover:text-blue-400 `}>
                Messages
             </Link>
           </div>
@@ -45,19 +45,19 @@ const Hamburger = () => {
             <h4 className="font-bold text-xl pb-3">Settings</h4>
             <div className="relative">
                 <FaRegUser size={20} color="6C7894" className="absolute left-[0%] top-[5%] " />
-                <button className="pl-10 font-semibold text-lg">Profile</button>
+                <button className="pl-10 font-semibold text-lg hover:text-blue-400">Profile</button>
             </div>
             <div className="relative">
                 <CiSquareInfo size={30} color="6C7894" className="absolute  left-[-5px] top-[-5%] " />
-                <button className="pl-10 font-semibold text-lg">FAQ's</button>
+                <button className="pl-10 font-semibold text-lg hover:text-blue-400">FAQ's</button>
             </div>
             <div className="relative">
                 <FiPhoneCall size={20} color="6C7894" className="absolute left-[0%] top-[10%] " />
-                <button className="pl-10 font-semibold text-lg">Contact us</button>
+                <button className="pl-10 font-semibold text-lg hover:text-blue-400">Contact us</button>
             </div>
             <div className="relative">
                 <IoLogOutOutline size={27} color="6C7894" className="absolute left-[0%] top-[0%] " />
-                <Link href="/" className="pl-10 font-semibold text-lg">Logout</Link>
+                <Link href="/" className="pl-10 font-semibold text-lg hover:text-blue-400">Logout</Link>
             </div>
         </div>
        

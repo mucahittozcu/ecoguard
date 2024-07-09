@@ -71,7 +71,7 @@ export const BarChart = ({ aqi }) => {
   }, [aqi]);
 
   return (
-    <div className="flex gap-x-1 xl:gap-x-10 lg:gap-x-2 md:gap-x-2 ml-2 xl:ml-24 lg:ml-2 md:ml-2">
+    <div className="flex gap-x-1 xl:gap-x-10 lg:gap-x-2 md:gap-x-1 ml-2 xl:ml-24 lg:ml-2 md:ml-2">
       {aqi.map((data, index) => (
         <div className="flex flex-col items-center rounded-xl w-[115px] h-[225px] xl:w-[300px] xl:h-[325px] lg:w-[200px] lg:h-[275px] md:w-[200px] md:h-[275px] bg-white relative pt-44 pr-24" key={index}>
           <h2 className="text-md font-md md:text-xl md:font-bold absolute top-3 left-2">{data.name}</h2>
